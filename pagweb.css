@@ -15,11 +15,25 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     background: #4a36a1;
     padding: 10px 0;
     font-family: "Times New Roman";
@@ -44,37 +58,85 @@ nav a:hover {
 }
 
 .hero h1 {
-    margin-bottom: 20px;
-    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-size: 3rem;
     font-family: "Times New Roman";
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size:1.5rem;
+    margin-bottom: 50px;
     font-family: 'Times New Roman';
     text-align:justify;;
 }
 
-.hero button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background: #4006c7;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.hero button:hover {
-    background: #0056b3;
-}
-
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     background: #333;
     color: white;
-    margin-top: 20px;
+    margin-top: 300px;
+}   
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background: #4a36a1;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
 }
